@@ -12,8 +12,12 @@
 
 <body style="--scroll:0">
     <div class="bg"></div>
-
     <div class="main">
+        <!-- <div class="menu-side">
+            <div class="item active">Who I am</div>
+            <div class="item">Item 02</div>
+            <div class="item">Item 03</div>
+        </div> -->
         <div class="wrapper">
             <div style="text-align: center">
                 <div class="my-name">
@@ -37,17 +41,51 @@
             </div>
         </div>
         <div class="wrapper">
-            <div>
-                <h1>Some content 2</h1>
+            <div class="skills">
+                <h1>Some technologies that<br />
+                    I've worked with:</h1>
+                <div class="row">
+                    <div class="col">
+                        <p>Javascript<br />
+                            React<br />
+                            Angular 2+<br />
+                            HTML5 / CSS<br />
+                            Node.js<br />
+                            Git<br />
+                            Docker<br />
+                            Photoshop/Illustrator<br /><br />
+
+                            (plus a bit of backend languages as C#, JAVA and others)
+                        </p>
+                    </div>
+                    <div class="col" style="text-align: center;">
+
+                        <p><b>Companies worked for:</b><br />
+                        </p>
+                        <div class="companies">
+                            <div class="item"><img src="imgs/logo_1.png" /></div>
+                            <div class="item"><img src="imgs/logo_2.png" /></div>
+                            <div class="item"><img src="imgs/logo_3.png" /></div>
+                            <div class="item"><img src="imgs/logo_4.png" /></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="main-text">
+                <h1>So, want to know more?</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
-                    magnam qui, ipsam doloremque voluptas impedit molestias sunt,
-                    exercitationem facilis mollitia numquam distinctio debitis, quo
-                    nostrum molestiae ipsum sapiente ducimus! Modi.
+                    Send me an email:
+
+                    <b>hugorezendedev@gmail.com</b>
                 </p>
             </div>
         </div>
     </div>
+
+
 </body>
 
 <script>
@@ -59,12 +97,17 @@
                 '--scroll',
                 window.pageYOffset / (window.innerHeight * 1 - 150)
             )
+            // if (window.pageYOffset / (window.innerHeight * 1 - 150) > .7) {
+            //     document.body.querySelector('.menu-side').classList.add('show')
+
+            // } else {
+            //     document.body.querySelector('.menu-side').classList.remove('show')
+            // }
         },
         false
     )
 
-    for (let index = 0; index < 30; index++) {
-        console.log('d')
+    for (let index = 0; index < 50; index++) {
         let div = document.createElement('div')
         div.classList.add('shape', 'shape--animated')
         let wrapper = document.createElement('div')
@@ -73,6 +116,10 @@
         wrapper.style.transform =
             'scale(' + Math.floor(Math.random() * 300) / 100 + ')'
         document.body.querySelector('.bg').appendChild(wrapper)
+        wrapper.style.setProperty(
+            '--rand',
+            Math.random()
+        )
         wrapper.style.top =
             'calc(' +
             Math.floor(Math.random() * 600) +

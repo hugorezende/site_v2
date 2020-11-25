@@ -23,6 +23,15 @@ body {
   height: 100%;
 }
 
+h1 {
+  font-size: 48px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 36px;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,13 +69,29 @@ body {
   max-width: 600px;
 }
 
-.wrapper .main-text h1 {
-  font-size: 48px;
+.wrapper .skills {
+  width: 1000px;
 }
 
-.wrapper .main-text p {
-  font-size: 18px;
-  line-height: 36px;
+.wrapper .skills .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 0.5fr;
+      grid-template-columns: 1.5fr 0.5fr;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+}
+
+@media (max-width: 600px) {
+  .wrapper .skills .row {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    margin-bottom: 30px;
+  }
+}
+
+.wrapper .skills .companies .item {
+  margin: 30px 0;
 }
 
 .shape {
@@ -90,6 +115,34 @@ body {
           box-sizing: border-box;
   height: 20px;
   width: 20px;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.menu-side {
+  width: 200px;
+  position: fixed;
+  top: calc(50% - 100px);
+  left: -200px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.menu-side.show {
+  left: 0px;
+}
+
+.menu-side .item {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.menu-side .item.active {
+  font-size: 24px;
 }
 
 .shape--square {
@@ -114,8 +167,8 @@ body {
           animation: shapes 1s linear infinite;
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
-  -webkit-animation-delay: calc(var(--scroll) * -1s);
-          animation-delay: calc(var(--scroll) * -1s);
+  -webkit-animation-delay: calc(var(--scroll) * var(--rand) * -0.5s);
+          animation-delay: calc(var(--scroll) * var(--rand) * -0.5s);
 }
 
 @-webkit-keyframes shapes {
