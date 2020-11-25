@@ -1,0 +1,158 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    color: #434343;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    padding: 50px;
+    box-sizing: border-box;
+    .my-name {
+        font-size: 36px;
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background-color: #ccc;
+            margin: 0 auto;
+            margin-top: -40px;
+            margin-bottom: 40px;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    .main-text {
+        text-align: center;
+        max-width: 600px;
+        h1 {
+            font-size: 48px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 36px;
+        }
+    }
+}
+
+//shape animation
+$grey: rgba(67, 67, 67, 0.1);
+
+$width: 20px;
+$border-width: $width / 2;
+
+$numFrames: 96;
+$frameDelay: 0.0302s;
+$duration: $numFrames * $frameDelay;
+
+@mixin square() {
+    border-bottom-color: $grey;
+    border-width: 0 0 $width;
+}
+
+@mixin triangle() {
+    border-width: 0 11px 20px;
+    border-bottom-color: $grey;
+    border-radius: 0;
+}
+
+@mixin circle() {
+    border-width: 0 0 $width;
+    border-bottom-color: $grey;
+    border-radius: 50%;
+}
+
+.shape {
+    height: $width;
+    width: $width;
+    background-clip: padding-box;
+    border: 0px solid transparent;
+    box-sizing: border-box;
+    height: $width;
+    width: $width;
+}
+
+.shape-wrapper {
+    top: 100px;
+    left: 100px;
+    position: absolute;
+    background-clip: padding-box;
+    border: 0px solid transparent;
+    box-sizing: border-box;
+    height: $width;
+    width: $width;
+}
+
+.shape--square {
+    @include square();
+}
+
+.shape--triangle {
+    @include triangle();
+}
+
+.shape--circle {
+    @include circle();
+}
+
+.shape--animated {
+    //animation: shapes $duration ease-in-out infinite;
+    animation: shapes 1s linear infinite;
+    // animation-play-state: paused;
+    // animation-delay: calc(var(--scroll) * -1s);
+
+    //animation: rotate 1s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+}
+
+@keyframes shapes {
+    0% {
+        @include square();
+        transform: rotate(-90deg);
+    }
+    33% {
+        @include triangle();
+        transform: rotate(0);
+    }
+    to {
+        @include circle();
+        transform: rotate(90deg);
+    }
+    // to {
+    //     @include triangle();
+    //     transform: rotate(0);
+    // }
+}
+
+// layout
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    float: left;
+}

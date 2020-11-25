@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <div class="main">
+        <div class="wrapper">
+            <div style="text-align: center">
+                <div class="my-name">
+                    <div class="avatar" style="background-image: url(/imgs/eu_2.jpg)"></div>
+                    Hugo<span class="bold">Rezende</span>
+                </div>
+                <div>Frontend Developer</div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="main-text">
+                <h1>Hello!</h1>
+                <p>
+                    My name is <b>Hugo</b>. I am a Frontend Developer with more than six years of professional
+                    experience.
+                    I try to help people and companies to create pleasant, effective and easy to use solutions.
+                    I defend that design and programming must working together, bringing the best of each area to
+                    minimize the distance between software and user.
+                </p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div>
+                <h1>Some content 2</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
+                    magnam qui, ipsam doloremque voluptas impedit molestias sunt,
+                    exercitationem facilis mollitia numquam distinctio debitis, quo
+                    nostrum molestiae ipsum sapiente ducimus! Modi.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    // Shape paralax effects
+    window.addEventListener(
+        'scroll',
+        () => {
+            document.body.style.setProperty(
+                '--scroll',
+                window.pageYOffset / (window.innerHeight * 1 - 150)
+            )
+        },
+        false
+    )
+
+    for (let index = 0; index < 30; index++) {
+        console.log('d')
+        let div = document.createElement('div')
+        div.classList.add('shape', 'shape--animated')
+        let wrapper = document.createElement('div')
+        wrapper.appendChild(div)
+        wrapper.classList.add('shape-wrapper')
+        wrapper.style.transform =
+            'scale(' + Math.floor(Math.random() * 300) / 100 + ')'
+        document.body.querySelector('.bg').appendChild(wrapper)
+        wrapper.style.top =
+            'calc(' +
+            Math.floor(Math.random() * 600) +
+            'vh + (var(--scroll)) * ' +
+            Math.floor(Math.random() * -600) +
+            '%)'
+        wrapper.style.left = Math.floor(Math.random() * 100) + '%'
+    }
+</script>
+
+</html>

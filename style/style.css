@@ -1,0 +1,181 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  color: #434343;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper .my-name {
+  font-size: 36px;
+}
+
+.wrapper .my-name .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: #ccc;
+  margin: 0 auto;
+  margin-top: -40px;
+  margin-bottom: 40px;
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper .main-text {
+  text-align: center;
+  max-width: 600px;
+}
+
+.wrapper .main-text h1 {
+  font-size: 48px;
+}
+
+.wrapper .main-text p {
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.shape {
+  height: 20px;
+  width: 20px;
+  background-clip: padding-box;
+  border: 0px solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 20px;
+  width: 20px;
+}
+
+.shape-wrapper {
+  top: 100px;
+  left: 100px;
+  position: absolute;
+  background-clip: padding-box;
+  border: 0px solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 20px;
+  width: 20px;
+}
+
+.shape--square {
+  border-bottom-color: rgba(67, 67, 67, 0.1);
+  border-width: 0 0 20px;
+}
+
+.shape--triangle {
+  border-width: 0 11px 20px;
+  border-bottom-color: rgba(67, 67, 67, 0.1);
+  border-radius: 0;
+}
+
+.shape--circle {
+  border-width: 0 0 20px;
+  border-bottom-color: rgba(67, 67, 67, 0.1);
+  border-radius: 50%;
+}
+
+.shape--animated {
+  -webkit-animation: shapes 1s linear infinite;
+          animation: shapes 1s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+}
+
+@-webkit-keyframes shapes {
+  0% {
+    border-bottom-color: rgba(67, 67, 67, 0.1);
+    border-width: 0 0 20px;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  33% {
+    border-width: 0 11px 20px;
+    border-bottom-color: rgba(67, 67, 67, 0.1);
+    border-radius: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    border-width: 0 0 20px;
+    border-bottom-color: rgba(67, 67, 67, 0.1);
+    border-radius: 50%;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@keyframes shapes {
+  0% {
+    border-bottom-color: rgba(67, 67, 67, 0.1);
+    border-width: 0 0 20px;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  33% {
+    border-width: 0 11px 20px;
+    border-bottom-color: rgba(67, 67, 67, 0.1);
+    border-radius: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    border-width: 0 0 20px;
+    border-bottom-color: rgba(67, 67, 67, 0.1);
+    border-radius: 50%;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+.block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150px;
+  height: 150px;
+  float: left;
+}
+/*# sourceMappingURL=style.css.map */
