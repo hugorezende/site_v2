@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta name="theme-color" content="#2c2b2b" />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style/style.css" />
-    <title>Document</title>
+    <title>Hugo Rezende</title>
 </head>
 
-<body style="--scroll:0">
-    <div class="bg"></div>
+<body style="--scroll: 0">
     <div class="main">
         <!-- <div class="menu-side">
             <div class="item active">Who I am</div>
@@ -29,12 +29,13 @@
         </div>
         <div class="wrapper">
             <div class="main-text">
-                <h1>Hello!</h1>
+                <h1>Heeey!</h1>
                 <p>
-                    My name is <b>Hugo Rezende</b>. I am a Frontend Developer!
-                    I'm here to help people and companies to create pleasant, effective and easy to use solutions.
-                    I belive that design and programming must work together, bringing the best of each area to
-                    minimize the gap between software and user.<br /><br />
+                    My name is <b>Hugo Rezende</b> and I'm a Frontend Developer!<br /> My goal is
+                    help people and companies to create pleasant, effective, and easy
+                    to use solutions. I believe that design and programming must work
+                    together, bringing the best of each area to minimize the gap between
+                    software and user.<br /><br />
 
                     <b>Let's build something together!</b>
                 </p>
@@ -42,11 +43,14 @@
         </div>
         <div class="wrapper">
             <div class="skills">
-                <h1>Some technologies that<br />
-                    I've worked with:</h1>
+                <h1>
+                    Some technologies that<br />
+                    I've worked with:
+                </h1>
                 <div class="row">
                     <div class="col">
-                        <p>Javascript<br />
+                        <p>
+                            Javascript<br />
                             React<br />
                             Angular 2+<br />
                             HTML5 / CSS<br />
@@ -58,10 +62,8 @@
                             (plus a bit of backend languages as C#, JAVA and others)
                         </p>
                     </div>
-                    <div class="col" style="text-align: center;">
-
-                        <p><b>Companies worked for:</b><br />
-                        </p>
+                    <div class="col" style="text-align: center">
+                        <p><b>Companies worked for:</b><br /></p>
                         <div class="companies">
                             <div class="item"><img src="imgs/logo_1.png" /></div>
                             <div class="item"><img src="imgs/logo_2.png" /></div>
@@ -69,6 +71,38 @@
                             <div class="item"><img src="imgs/logo_4.png" /></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper half">
+            <div class="main-text">
+                <h1>Check more about my work</h1>
+                <div class="links">
+
+                    <div class="item">
+                        <a href="https://github.com/hugorezende" target="_blank">
+                            <img alt="Github" src="https://image.flaticon.com/icons/png/512/25/25231.png" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://www.linkedin.com/in/hugorezende/" target="_blank">
+                            <img alt="Linkedin"
+                                src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_linkedin-512.png" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://codepen.io/hugorezende" target="_blank">
+                            <img alt="Codepen"
+                                src="https://cdn0.iconfinder.com/data/icons/social-media-2091/100/social-32-512.png" />
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="https://hugorezende.com.br/blog" target="_blank">
+                            <img alt="Blog" src="https://image.flaticon.com/icons/png/512/23/23763.png" />
+                        </a>
+                    </div>
+
 
                 </div>
             </div>
@@ -79,16 +113,20 @@
                 <p>
                     Send me an email:
 
-                    <b>hugorezendedev@gmail.com</b>
+                    <a href="mailto:hugorezendedev@gmail.com"><b>hugorezendedev@gmail.com</b></a>
                 </p>
             </div>
         </div>
     </div>
-
-
+    <div class="bg"></div>
 </body>
 
 <script>
+    console.log(
+        "%c ■ ▲ ● Heeeeeeyyyy! Seems you are really interested in my work, right? That's cool. Let me know what you think about my work. :D ■ ▲ ●",
+        'color: #aaa; font-size: 22px; font-weight: bold;'
+    )
+
     // Shape paralax effects
     window.addEventListener(
         'scroll',
@@ -97,12 +135,6 @@
                 '--scroll',
                 window.pageYOffset / (window.innerHeight * 1 - 150)
             )
-            // if (window.pageYOffset / (window.innerHeight * 1 - 150) > .7) {
-            //     document.body.querySelector('.menu-side').classList.add('show')
-
-            // } else {
-            //     document.body.querySelector('.menu-side').classList.remove('show')
-            // }
         },
         false
     )
@@ -116,10 +148,7 @@
         wrapper.style.transform =
             'scale(' + Math.floor(Math.random() * 300) / 100 + ')'
         document.body.querySelector('.bg').appendChild(wrapper)
-        wrapper.style.setProperty(
-            '--rand',
-            Math.random()
-        )
+        wrapper.style.setProperty('--rand', Math.random())
         wrapper.style.top =
             'calc(' +
             Math.floor(Math.random() * 600) +

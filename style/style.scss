@@ -16,10 +16,13 @@ body {
     width: 100%;
     height: 100%;
     position: fixed;
+    z-index: 1;
 }
 .main {
     width: 100%;
     height: 100%;
+    position: absolute;
+    z-index: 10;
 }
 h1 {
     font-size: 48px;
@@ -28,15 +31,24 @@ p {
     font-size: 18px;
     line-height: 36px;
 }
+a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+        color: #ccc;
+    }
+}
 .wrapper {
     display: flex;
     align-items: center;
-    height: 100%;
+    min-height: 100%;
     justify-content: center;
     padding: 50px;
     box-sizing: border-box;
     //padding-left: 100px;
-
+    &.half {
+        min-height: 50%;
+    }
     .my-name {
         font-size: 36px;
         .avatar {
@@ -76,13 +88,26 @@ p {
     }
 }
 
+.links {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    .item {
+        width: 50px;
+        margin: 0 10px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
 //shape animation
 $grey: rgba(67, 67, 67, 0.1);
 
 $width: 20px;
 $border-width: $width / 2;
 
-$numFrames: 96;
+$numFrames: 48;
 $frameDelay: 0.0302s;
 $duration: $numFrames * $frameDelay;
 
@@ -123,7 +148,7 @@ $duration: $numFrames * $frameDelay;
     height: $width;
     width: $width;
     transition-timing-function: ease-out;
-    transition: all 0.5s;
+    //transition: all 0.5s;
 }
 
 .menu-side {
@@ -166,7 +191,7 @@ $duration: $numFrames * $frameDelay;
 
     //animation: rotate 1s linear infinite;
     animation-play-state: paused;
-    animation-delay: calc(var(--scroll) * var(--rand) * -0.5s);
+    animation-delay: calc(var(--scroll) * var(--rand) * -1s);
 }
 
 @keyframes shapes {
